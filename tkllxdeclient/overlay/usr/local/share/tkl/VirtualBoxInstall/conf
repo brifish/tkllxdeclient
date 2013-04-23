@@ -1,0 +1,50 @@
+#!/bin/bash -ex
+# By Brian Fisher <brifish@yahoo.com> 2013
+# Install the Virtualbox Virtual Machine Manager
+# https://www.virtualbox.org/
+
+install()
+{
+  DEBIAN_FRONTEND=noninteractive apt-get -y \
+      -o DPkg::Options::=--force-confdef \
+      -o DPkg::Options::=--force-confold \
+      install $@
+}
+
+
+# Add source listing for the VirtualBox package
+echo deb http://download.virtualbox.org/virtualbox/debian squeeze contrib non-free >> /etc/apt/sources.list.d/sources.list
+# Add the VirtualBox repos for the TKL security updates
+echo deb http://download.virtualbox.org/virtualbox/debian squeeze contrib non-free >> /etc/apt/sources.list.d/security.sources.list
+
+# The Oracle public key for apt-secure can be combined for downloading and registering, this is needed to get Virtual Box installed. Must be run as root:
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | apt-key add -
+
+# update and upgrade available packages from their repositories
+apt-get update -y
+apt-get upgrade -y --force-yes
+
+# Install virtual box and supporting packages
+install virtualbox-4.2
+
+# Virtual Box will Create the group 'vboxusers'
+# Users of VirtualBox must be members of that group.
+adduser root vboxusers
+adduser admin vboxusers
+
+# The TKL load will probably need dkms as well to help with kernel services for running the VM’s
+install dkms
+
+# The TKL may also need the headers package to get VM’s to load
+install linux-headers-$(uname -r) build-essential
+
+#Clean
+apt-get -y autoremove
+apt-get clean
+
+
+# Enable the Re-install script to run after a TKLBAM restore
+# VirtualBox's custom repositories will fail without this
+
+chmod +x /etc/tklbam/hooks.d/VirtualBoxReInstall.sh
+

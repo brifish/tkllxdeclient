@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=uzbl tabbed
+Encoding=UTF-8
+Exec=/usr/bin/uzbl-browser
+Comment=UZBL tabbed web browser
+Icon=/usr/share/icons/nuoveXT2/128x128/apps/browser.png
+Terminal=false
+NoDisplay=false
+Categories=Network;WebBrowser;
+OnlyShowIn=LXDE
+Type=Application

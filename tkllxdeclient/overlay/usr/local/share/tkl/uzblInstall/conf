@@ -1,0 +1,20 @@
+#!/bin/bash -ex
+# Brian Fisher <brifish@yahoo.com> 2013
+# Installs the uzbl (useable) lightweight Webkit browser
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+# Update apt package information
+apt-get update 
+
+# Install the uzbl browser
+install uzbl
+
+

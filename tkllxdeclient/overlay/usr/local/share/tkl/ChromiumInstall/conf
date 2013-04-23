@@ -1,0 +1,18 @@
+#!/bin/bash -ex
+# Brian Fisher <brifish@yahoo.com> 2013
+# Installs the Chromium Web Browser
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+# Update apt package information
+apt-get update 
+
+# Install Chromium
+install chromium-browser

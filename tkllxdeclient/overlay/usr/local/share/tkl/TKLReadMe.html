@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TKL LXDE Client Workstation Read Me</title>
+</head>
+
+<body>
+<h2>TKL Core / LXDE Client Workstation</h2>
+
+<p>This is patch was based off the previous work and comments of many different people in the TKL community:</br>
+<a href="http://www.turnkeylinux.org/forum/general/20100813/tklclient-core-development-ideas-and-feedback-please"> http://www.turnkeylinux.org/forum/general/20100813/tklclient-core-development-ideas-and-feedback-please<a></br>
+<a href="http://www.turnkeylinux.org/forum/general/20101006/tklpatch-tklclient-core">http://www.turnkeylinux.org/forum/general/20101006/tklpatch-tklclient-core</a></br>
+<a href="http://wiki.turnkeylinux.org/Whiteboard/TKL_Client">http://wiki.turnkeylinux.org/Whiteboard/TKL_Client</a></br>
+</p>
+
+
+
+
+<p>
+<a name="start"><h2>To start off using this version of the TKL/LXDE Client workstation, you may want to do some of the following:</a></h2>
+<a href="#timezone">Set the timezone</a><br/>
+<a href="#sysadmin">Use Webmin for System Administration</a><br/>
+<a href="#password">Reset Your Password</a><br/>
+<a href="#network">View and set network settings</a><br/>
+<a href="#desktop">Set a Custom TKL Desktop Graphic</a><br/>
+<a href="#tklbamAdmin">Setup and configure TKLBAM</a><br/>
+<a href="#virtualboxInstall">Install the VirtualBox Virtual Machine Manager</a><br/>
+<a href="#installOther">Install Other Apps</a><br/>
+<a href="#synaptic">Install Other Apps with Synaptic</a><br/>
+<a href="#OtherDoc">See Other Documentation on the development of this patch</a><br/>
+</p>
+
+
+
+<p>
+<a name="timezone"><h3>Set the timezone for your computer and sync it with a time server</h3></a>
+From the menu, use either: Preferences > Time and Date<br/>
+or: TKL_Workstation > TKL_Admin > System Configuration<br/>
+<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="sysadmin"><h3>Webmin for System Administration</h3></a>
+With the default web browser, you can use Webmin for system administration.<br/>
+use: TKL_Workstation > TKL_Admin > Local Webmin Config<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="password"><h3>Reset Password</h3></a>
+Set a new password for your account. The first time through, you're probably using a default password.<br/>
+From the menu, use either: Preferences > Users and Groups<br/>
+or: TKL_Workstation > TKL_Admin > Local Webmin Config <br/>
+or: TKL_Workstation > TKL_Admin > System Configuration<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="network"><h3>View and set network settings</h3></a>
+To view and set network settings for this workstation,<br/>
+From the menu, you can use: TKL_Workstation > TKL_Admin > ConfConsole<br/>
+or: TKL_Workstation > TKL_Admin > Local Webmin Config<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="desktop"><h3>Custom Desktop</h3></a>
+You can customize your Desktop Wallpaper and taskbar "start" icon. There are pre-loaded TKL graphics files that will come up when you browse.<br/>
+Wallpaper = Right click the desktop > Desktop Preferences, browse for the wallpaper you'd like to use.<br/>
+Icon = Right click the taskbar start icon > Menu Settings, browse for the icon you'd like to use<br/>
+<br/>
+These were created by Jomy Muttathil in this post: <a href="http://www.turnkeylinux.org/forum/general/20101008/tklclient-core-appearance">http://www.turnkeylinux.org/forum/general/20101008/tklclient-core-appearance</a><br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="tklbamAdmin"><h3>TKLBAM Administration</h3></a>
+You can access Turnkey Linux's Backup and Migration tool - TKLBAM - through the Webmin Console.
+<br/>
+use: TKL_Workstation > TKL_Admin > Local TKLBAM Webmin Config<br/>
+<br/>
+You need to enter your TKL HUB API key here in order to get the service working. You can access or setup your HUB account here:<br/>
+<a href=https://hub.turnkeylinux.org/>https://hub.turnkeylinux.org/</a><br/>
+The TKLBAM tool has many capabilities. As a basic tool, it has the ability to backup your workstation for you.<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="virtualboxInstall"><h3>VirtualBox Virtual Machine Manager</h3></a>
+You may want to install and use the Virtual Box application to run and manage virtual machines?<br/>
+Virtual Box will let you run the virtual appliances that you can download from the Turnkey Linux website.<br/>
+From the menu, use: TKL_Workstation > TKL_Install > Application Installer<br/>
+<br/>
+Virtual Box can run both .vmdk and .ovf versions of the appliances.<br/>
+See this documentation on how to run the virtual machines:<br/>
+<a href=http://www.turnkeylinux.org/docs/installation-appliances-virtualbox>http://www.turnkeylinux.org/docs/installation-appliances-virtualbox</a><br/>
+<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="installOther"><h3>Install Other Apps</h3></a>
+There are many other apps that you can download and install. A few install scripts are pre-installed on this workstation.<br/>
+From the menu, look here: TKL_Workstation > TKL_Install > Application Installer<br/>
+<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+<p>
+<a name="synaptic"><h3>Install Apps with Synaptic</h3></a>
+A more standard way to install apps is through the Synaptic package manager.<br/>
+It is a graphical tool that is similar in function to Add/Remove Programs in MS Windows.<br/>
+From the menu, use: Preferences > Synaptic Package Manager<br/>
+<br/>
+<a href="#start">Return to start</a><br/>
+</p>
+
+
+
+
+
+<p>
+<a name="OtherDoc"><h2>Other Documentation on the development of this patch</h2></a>
+<a href="#MenuItems">Menu Items locations</a><br/>
+<a href="#ScreenSettings">Screen Savers and Screen Locking</a><br/>
+<a href="#lxterminal">lxterminal not working correctly</a><br/>
+<a href="#gksu">GKSU added to system config utilities</a><br/>
+<a href="#Remove Packages">Removing Packages that you don't want</a><br/>
+<a href="#GraphicalLogin">Installing a Graphical Login Manager</a><br/>
+<a href="#TKLBAM">TKLBAM Settings</a><br/>
+<a href="#TKLBAMID">TKLBAM ID Reset</a><br/>
+<a href="#ref"> Some of the beter LXDE reference links that I found</a><br/>
+<a href="#apps">Ideas for LXDE usage and applications</a><br/>
+</p>
+
+
+<p>
+<a name="MenuItems"><h3>TKL Workstation Menu Items</h3></a>
+The Items in the TKL_Workstation menu (Script files and the Desktop shortcuts that point to them) are available in the /usr/local/bin and the /usr/local/share/applications folders.
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="ScreenSettings"><h3>Screen Saver and Screen Lock</h3></a>
+There are a few items that didn't come auto-configured with the base install of lxde. Screen lock and screen savers were two that I wanted to have. I've added in screen savers via the xscreensavers apt package and that auto-enables screen savers and the taskbar screen lock icon.
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="lxterminal"><h3>lxterminal not working for normal user</h3></a>
+Every install of LXDE that I've done has had a broken "lxterminal" link for user's other than root.<br/>
+The error looks something like "X: user not authorized to run the X server, aborting...." when you launch a normal terminal window.<br/>
+I googled for a fix and it appears to be a common bug with LXDE<br/>
+You can Ctrl+C to cancel the error and the terminal will work after, FYI<br/>
+If Anyone knows of a fix for this, please let me know<br/>
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+
+<p>
+<a name="gksu"><h3>GKSU added to system config utilities</h3></a>
+
+I edited many of the icons for the system tools menu and added a "gksu" call to the front of them. This forces the user to enter the root user password when launching the menu items. It is a bit more inconvenient to login everytime you use one of the tools, but it didn't make sense to me to launch the tools if the user account didn't have permission to change anything. With the gksu call, you can use the tool to actually make changes to the workstation.
+
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="Remove Packages"><h3>Remove Packages</h3></a>
+The root user can remove packages that they no longer wish to use at any time through a command line similar to:<br/>
+$ apt-get purge openssh-server<br/>
+or through the synaptic GUI package manager (which is similar to the Windows "Add/Remove Programs" control panel app).<br/>
+I've also included a system administration choice that can remove the "Server-Like" apps that come pre-configured with TKL Core.<br/>
+It can be found at: TKL_Workstation > TKL_Admin > System Configuration
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+<p>
+<a name="GraphicalLogin"><h3>Graphical Login Package</h3></a>
+For system boot, I left the default confconsole display in place. It's possible to install a graphical login package (like gdm, kdm, xdm, etc.) if you want.<br/>
+This will give you a more "Workstation-style" graphical user/pass login prompt at boot.<br/>
+There is an install choice for the "Slim" graphical login package: TKL_Workstation > TKL_Install > Application Installer<br/>
+If you do install a login manager, you'll probably want to disable confconsole at boot and remove the "startx" call in the user .bashrc file. You can look at the install patch folder for Slim for more details. /usr/local/share/tkl/SlimInstall/conf <br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="TKLBAM"><h3>TKLBAM Settings</h3></a>
+There are a few config files and changes in place to take into account the way that TKLBAM works.<br/>
+<br/>
+A few of the things that have been addressed are restore settings for apps with custom repos and public encryption keys, like Google Chrome and Virtual Box.<br/>
+Also, there are settings to exclude backing up certain directories, such as the Chrome executables.<br/>
+<br/>
+Here are a couple of good links on this topic:<br/>
+<a href="http://www.turnkeylinux.org/blog/tklbam-hooks">http://www.turnkeylinux.org/blog/tklbam-hooks</a><br/>
+<a href="http://www.turnkeylinux.org/forum/support/20110101/tklbam-seems-not-work">http://www.turnkeylinux.org/forum/support/20110101/tklbam-seems-not-work</a><br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+<p>
+<a name="TKLBAMID"><h3>TKLBAM ID reset script</h3></a>
+There is a TKLBAM ID reset script in the System Administation menu<br/>
+TKL_Workstation > TKL_Admin > System Configuration<br/>
+There may be times that you wish to dis-associate the workstation from it's current backup tree. You can use this script to automate the process of deleting the current ID and creating another new one to backup to.<br/>
+This method was based on this post:
+<a href="http://www.turnkeylinux.org/forum/support/20111101/migrate-turnkey-ami-another-aws-account">http://www.turnkeylinux.org/forum/support/20111101/migrate-turnkey-ami-another-aws-account</a><br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+
+<p>
+<a name="ref"><h3>Some of the beter LXDE reference links that I found</h3></a>
+<a href="http://lxlinux.com"> http://lxlinux.com/</a><br />
+<a href="http://wiki.lxde.org/en/LXPanel"> http://wiki.lxde.org/en/LXPanel</a><br />
+<a href="http://pclosmag.com/html/Issues/201010/page07.html"> http://pclosmag.com/html/Issues/201010/page07.html</a><br />
+<a href="http://lkubaski.wordpress.com/2012/06/29/adding-lxde-start-menu-and-desktop-shortcuts/"> http://lkubaski.wordpress.com/2012/06/29/adding-lxde-start-menu-and-desktop-shortcuts/</a><br />
+<a href="http://forum.lxde.org/viewtopic.php?f=8&t=31300"> http://forum.lxde.org/viewtopic.php?f=8&t=31300<a><br/>
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+<p>
+<a name="apps"><h3>LXDE usage and suggestions ideas</h3></a>
+<a href="http://forum.lxde.org/viewtopic.php?f=3&t=14">Suggested Apps for LXDE</a><br/>
+<br/>
+<a href="#OtherDoc">Return to Other Documentation</a><br/>
+</p>
+
+
+
+</html>

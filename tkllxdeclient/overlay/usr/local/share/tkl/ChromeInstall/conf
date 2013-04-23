@@ -1,0 +1,58 @@
+#!/bin/bash -ex
+# Brian Fisher <brifish@yahoo.com> 2013
+# Installs the chrome web browser
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+# Update apt package information
+apt-get update 
+
+# Install the Chrome web browser -150MB
+# Web page = https://www.google.com/intl/en/chrome/browser/
+# To run chrome from a desktop shortcut /usr/bin/google­-chrome %U
+# Chrome also installs the flash plugin for itself
+# Google repository http://ubuntuforums.org/showthread.php?t=1351541
+# key config http://www.google.com/linuxrepositories
+
+# Have to add the custom repositories for Chrome and install/update from there
+echo deb http://dl.google.com/linux/deb/ stable main >> /etc/apt/sources.list.d/sources.list
+# Have to add the custom repositories for Chrome and install/update from there
+echo deb http://dl.google.com/linux/deb/ stable main >> /etc/apt/sources.list.d/security.sources.list
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+# if running this as someone else other than root, you need to sudo command.
+# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+apt-get update
+apt-get upgrade -y --force-yes
+install google-chrome-stable
+
+# Enable the Re-install script to run after a TKLBAM restore
+# Chrome's custom repositories will fail without this
+
+chmod +x /etc/tklbam/hooks.d/ChromeReInstall.sh
+
+
+# Add any files/folders to exclude from TKLBAM backups here
+# Cache and executable files can be cut from backups
+
+changefile="/etc/tklbam/overrides"
+
+search="/mnt/images"
+
+replace="\n\
+-/opt/google\n\
+-/home/admin/.config/google-chrome/SingletonLock";
+
+
+# Add the $replace folder to the TKLBAM overrides file to EXCLUDE it from being backed up
+sed -i 's|'"$search"'|&'"$replace"'|' "$changefile"
+

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Application installer
+Encoding=UTF-8
+Exec=lxterminal -e "/usr/local/bin/AppInstall.sh"
+Comment=Automated Application installer for TKL Client Workstation
+Icon=/usr/share/icons/nuoveXT2/128x128/actions/window-new.png
+ExecutionMode=Terminal
+NoDisplay=false
+Categories=TKL_Install;
+OnlyShowIn=LXDE
+Type=Application

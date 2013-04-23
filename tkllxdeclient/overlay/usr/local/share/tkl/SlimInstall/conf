@@ -1,0 +1,27 @@
+#!/bin/bash -ex
+# Brian Fisher <brifish@yahoo.com> 2013
+# Installs the Slim graphical login manager for X-11
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+# Update apt package information
+apt-get update 
+
+# Disable confconsole from starting at boot
+# But, still allow it to be called from the command line
+/etc/init.d/confconsole stop
+update-rc.d -f confconsole remove
+
+# remove the 'startx' call from admin's login auto-launch
+sed -i 's/startx//' /home/admin/.bashrc
+
+
+# Install the Slim graphical login manager
+install slim

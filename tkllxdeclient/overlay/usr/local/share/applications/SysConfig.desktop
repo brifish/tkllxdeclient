@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=System Configuration
+Encoding=UTF-8
+Exec=lxterminal -e "/usr/local/bin/SysConfig.sh"
+Comment=System Setting configurator for TKL Client Workstation
+Icon=obconf
+ExecutionMode=Terminal
+NoDisplay=false
+Categories=TKL_Admin;
+OnlyShowIn=LXDE
+Type=Application

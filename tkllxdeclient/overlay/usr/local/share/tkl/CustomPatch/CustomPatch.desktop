@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Install Custom Patch Settings
+Encoding=UTF-8
+Exec=lxterminal -e " /usr/local/bin/CustomPatch.sh"
+Comment=A few customized settings that I've found helpful
+Icon=/usr/share/icons/nuoveXT2/128x128/apps/terminal.png
+ExecutionMode=Terminal
+NoDisplay=false
+Categories=
+OnlyShowIn=LXDE
+Type=Application

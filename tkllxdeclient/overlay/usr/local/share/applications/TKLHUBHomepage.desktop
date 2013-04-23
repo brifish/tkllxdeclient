@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=TKL HUB Homepage
+Comment=TKL HUB Homepage Link
+Exec=x-www-browser "https://hub.turnkeylinux.org/"
+Icon=/usr/share/icons/nuoveXT2/128x128/apps/browser.png
+Categories=TKL_Reference
+Terminal=false
+NoDisplay=false
+OnlyShowIn=LXDE

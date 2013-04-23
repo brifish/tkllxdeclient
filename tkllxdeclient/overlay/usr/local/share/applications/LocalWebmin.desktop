@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Local Webmin Config
+Comment=Local Webmin webpage configuration
+Exec=x-www-browser "https://localhost:12321/"
+Icon=/usr/share/icons/nuoveXT2/128x128/apps/browser.png
+Categories=TKL_Admin
+Terminal=false
+NoDisplay=false
+OnlyShowIn=LXDE

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=confconsole
+Encoding=UTF-8
+Exec=lxterminal -e "sudo /usr/bin/confconsole"
+Comment=Run the default, startup TKL confconsole
+Icon=/usr/share/pixmaps/openbox.xpm
+ExecutionMode=Terminal
+NoDisplay=false
+Categories=TKL_Admin;
+OnlyShowIn=LXDE
+Type=Application

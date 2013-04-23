@@ -1,0 +1,53 @@
+#!/bin/bash -ex
+# Originaly based off of a script by Adrian Moya <adrianmoya@gmail.com> 2010
+# Modified by Brian Fisher <brifish@yahoo.com> 2013
+# Installs a Turnkey Linux Client Workstation with a minimal LXDE GUI (and a few utilities)
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+########### Setup the Desktop ###########
+# Set Hostname
+HOSTNAME=TKLLXDEClient
+echo "$HOSTNAME" > /etc/hostname
+sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
+hostname $HOSTNAME
+
+#Update package information
+apt-get update 
+
+# Install Turnkey Linux tklpatch appliance patching utility - 2MB
+install tklpatch
+
+# Install xorg - x window system - 105MB
+install xorg
+
+# Install LXDE desktop - 73MB
+install lxde 
+
+# Install gksu - Gtk+ frontend to /bin/su - 14MB
+install gksu
+
+# Install policykit-1 - framework for managing administrative policies and privileges. Helped with mounting USB/CD-rom drives - 1MB
+install policykit-1
+
+# Install the screen savers. Also enables the screen lock icon in the taskbar - 4MB
+install xscreensaver
+
+
+########### Create a Default User ###########
+# Setup non-root user “admin”
+useradd -m -s /bin/bash admin
+passwd admin <<EOF
+turnkey
+turnkey
+EOF
+
+# make user "admin" a sudoer.
+echo admin  ALL=\(ALL\) ALL >> /etc/sudoers

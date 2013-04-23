@@ -1,0 +1,60 @@
+#!/bin/bash -ex
+# Originaly based off a script by Adrian Moya <adrianmoya@gmail.com> 2010
+# Modified by Brian Fisher <brifish@yahoo.com> 2013
+# Installs a Turnkey Linux Client Workstation with a minimal LXDE GUI (and a few utilities)
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+########### App Installs ###########
+# Install synaptic graphical package management app - similar to "Add/Remove programs in MS Windows - 14MB
+install synaptic
+
+# install the gnome system tools - user admin tools, timezone set, etc - doesn't have a large gnome dependency - 14MB
+install gnome-system-tools
+
+# install a calculator app - galculator - 1MB
+install galculator
+
+# Install pdf viewer - epdfview - 4MB
+install epdfview
+
+# install the clamav antivirus app & GUI - 32MB
+install clamtk
+
+# install the midori lightweight web browser - 40MB
+install midori
+
+
+
+########### Desktop Customization ###########
+# sed edit the LXDE menu file /etc/xdg/menus/lxde-applications.menu
+# This creates the custom TKL_Workstation menus on the taskbar
+/usr/local/bin/Edit-lxde-application.menu.sh
+
+# Edit the *.desktop shortcut exec lines to launch the Gnome system tools and synaptic shortcuts with gksu. This will let the tools run as su/root
+/usr/local/bin/EditGksuCommands.sh
+
+# Add files/folders to the default TKLBAM backup list
+/usr/local/bin/YesBackup.sh
+
+
+
+########### Default User Config ###########
+# Make sure that admin is the owner of it's home directory and files
+chown admin:admin /home/admin -R
+
+# Make the LXDE GUI start automatically when ‘admin’ logs in
+echo startx >> /home/admin/.bashrc
+
+
+
+########### Finish up/ Clean up ###########
+apt-get -y autoremove
+apt-get clean
+

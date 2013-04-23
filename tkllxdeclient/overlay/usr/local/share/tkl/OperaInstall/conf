@@ -1,0 +1,52 @@
+#!/bin/bash -ex
+# Brian Fisher <brifish@yahoo.com> 2013
+# Installs the opera web browser
+
+install()
+{
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+
+# Update apt package information
+apt-get update 
+
+# Install the Opera web browser -XXMB
+
+# Have to add the custom repositories for Opera and install/update from there
+echo deb http://deb.opera.com/opera squeeze non-free >> /etc/apt/sources.list.d/sources.list
+# Add the Opera repos to the security updates file
+echo deb http://deb.opera.com/opera squeeze non-free >> /etc/apt/sources.list.d/security.sources.list
+
+wget -O - http://deb.opera.com/archive.key | apt-key add -
+
+# if running this as someone else other than root, you need to sudo the aptkey command.
+# wget -O - http://deb.opera.com/archive.key | sudo apt-key add -
+
+apt-get update
+apt-get upgrade -y --force-yes
+install opera
+
+# Enable the Re-install script to run after a TKLBAM restore
+# Opera's custom repositories will fail without this
+
+chmod +x /etc/tklbam/hooks.d/OperaReInstall.sh
+
+
+# Add any files/folders to exclude from TKLBAM backups here
+# Cache and executable files can be cut from backups
+
+# changefile="/etc/tklbam/overrides"
+
+# search="/mnt/images"
+
+# replace="\n\
+# -/path/to/folder\n\
+# -/path/to/next/folder\n\";
+
+
+# Add the $replace folder(s) to the TKLBAM overrides file to EXCLUDE it from being backed up
+# sed -i 's|'"$search"'|&'"$replace"'|' "$changefile"
